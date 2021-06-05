@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>WebSocket Chat</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+	<script type="text/javascript">
+		var socket;
+		if (!window.WebSocket) {
+			window.WebSocket = window.MozWebSocket;
+		}
+		if (window.WebSocket) {
+			socket = new WebSocket("ws://10.100.100.100:8089/ws");
+			socket.onmessage = function (event) {
+				var ta = document.getElementById('responseText');
+				ta.value = ta.value + '\n' + event.data
+				// document.getElementById('myMessage').innerText = event.data;
+			};
+			socket.onopen = function (event) {
+				var ta = document.getElementById('responseText');
+				ta.value = "连接开启!";
+			};
+			socket.onclose = function (event) {
+				var ta = document.getElementById('responseText');
+				ta.value = ta.value + "连接被关闭";
+			};
+		} else {
+			alert("你的浏览器不支持 WebSocket！");
+		}
+
+		function send(message) {
+			if (!window.WebSocket) {
+				return;
+			}
+			if (socket.readyState == WebSocket.OPEN) {
+				socket.send(message);
+				document.getElementById("myInput").value = ''
+			} else {
+				alert("连接没有开启.");
+			}
+		}
+    document.onkeydown=function(event){
+    var code = event.keyCode;
+    if(code === 13){ //这是键盘的enter监听事件
+        //绑定焦点
+        document.getElementById("mySend").onclick();
+        setTimeout(()=>{
+          document.getElementById("myInput").value = ''
+          document.getElementById("myInput").focus()
+        },50)
+    }
+}
+	</script>
+	<form onsubmit="return false;">
+		<p>WebSocket CHAT：</p>
+		<textarea id="responseText" style="width: 100%; height: 300px;"  class="ant-input"></textarea>
+		<br>
+		<input type="text" id="myInput" name="message" style="width: 500px" value=""  class="ant-input">
+		<input type="button" id="mySend" value="发送消息" onclick="send(this.form.message.value)"  class="ant-btn ant-btn-primary">
+		<input type="button" onclick="javascript:document.getElementById('responseText').value=''" 
+			value="清空聊天记录"  class="ant-btn ant-btn-primary">
+	</form>
+	<br>
+	<br>
+</body>
+
+</html>
