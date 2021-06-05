@@ -1,0 +1,160 @@
+/* 处理按钮 */
+.ant-btn {
+  line-height: 1.499;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  height: 32px;
+  padding: 0 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.65);
+  background-color: #fff;
+  border-color: #d9d9d9;
+}
+.ant-btn-primary {
+  color: #fff;
+  background-color: #1890ff;
+  border-color: #1890ff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+.d-none {
+  display: none;
+}
+/* 处理按钮 */
+/* 表格代码 */
+
+.table-head {
+  padding-right: 17px;
+  background: #fafafa;
+}
+.table-body {
+  width: 100%;
+  height: 191px;
+  overflow-y: scroll;
+}
+.table-head table,
+.table-body table {
+  width: 100%;
+}
+/* .table-body table tr:nth-child(2n+1){background-color:#f2f2f2;} */
+.ant-table table {
+  width: 100%;
+  text-align: left;
+  border-radius: 4px 4px 0 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #e8e8e8;
+  border-right: 0;
+  border-bottom: 0;
+  width: 100%;
+  text-align: left;
+  border-radius: 4px 4px 0 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  position: relative;
+}
+.ant-table {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  position: relative;
+  clear: both;
+}
+
+.ant-table-thead > tr > th {
+  text-align: center;
+  padding: 8px 4px;
+  transition: all 0.3s, border 0s;
+  border-right: 1px solid #e8e8e8;
+}
+
+.ant-table-tbody > tr > td {
+  text-align: center;
+  border-bottom: 1px solid #e8e8e8;
+  transition: all 0.3s, border 0s;
+  border-right: 1px solid #e8e8e8;
+  padding: 8px 4px;
+  color: #1890ff;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.ant-table-tbody > tr > td:hover {
+  color: #ea14f1;
+}
+.ant-table-tbody > tr:hover {
+  background: #e6f7ff;
+}
+/* 表格代码 */
+/* 处理进度条 */
+.progress {
+  width: 100%;
+  height: 3px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.progress>span {
+  display: inline-block;
+  position: absolute;
+  border-radius: 4px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgb(98, 230, 74);
+  transition: width 0.3s ease-out;
+}
+
+.myFile {
+  display: block;
+  color: pink;
+  cursor: pointer;
+}
+
+/* 处理进度条 */
+.ant-input {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-variant: tabular-nums;
+  list-style: none;
+  font-feature-settings: "tnum";
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 32px;
+  padding: 4px 11px;
+  color: rgba(0,0,0,.65);
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  transition: all .3s;
+}
